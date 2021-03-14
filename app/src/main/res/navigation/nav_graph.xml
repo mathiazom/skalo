@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/scaleFragment">
+
+    <fragment
+        android:id="@+id/scaleFragment"
+        android:name="com.mzom.skalo.ScaleFragment"
+        android:label="scale_fragment"
+        tools:layout="@layout/scale_fragment" >
+        <action
+            app:popUpTo="@id/nav_graph"
+            app:popUpToInclusive="true"
+            android:id="@+id/action_scaleFragment_to_recordFragment"
+            app:destination="@id/recordFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/recordFragment"
+        android:name="com.mzom.skalo.RecordFragment"
+        android:label="record_fragment"
+        tools:layout="@layout/record_fragment" >
+        <action
+            android:id="@+id/action_recordFragment_to_scaleFragment"
+            app:destination="@id/scaleFragment" />
+    </fragment>
+</navigation>
