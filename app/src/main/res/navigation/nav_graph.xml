@@ -7,9 +7,9 @@
 
     <fragment
         android:id="@+id/scaleFragment"
-        android:name="com.mzom.skalo.EditRecordFragment"
+        android:name="com.mzom.skalo.EditMeasurementFragment"
         android:label="scale_fragment"
-        tools:layout="@layout/edit_record_fragment" >
+        tools:layout="@layout/edit_measurement_fragment" >
         <action
             app:popUpTo="@id/nav_graph"
             app:popUpToInclusive="true"
@@ -18,9 +18,9 @@
     </fragment>
     <fragment
         android:id="@+id/recordFragment"
-        android:name="com.mzom.skalo.ViewRecordFragment"
+        android:name="com.mzom.skalo.ViewMeasurementFragment"
         android:label="record_fragment"
-        tools:layout="@layout/view_record_fragment" >
+        tools:layout="@layout/view_measurement_fragment" >
         <action
             android:id="@+id/action_recordFragment_to_scaleFragment"
             app:destination="@id/scaleFragment" />

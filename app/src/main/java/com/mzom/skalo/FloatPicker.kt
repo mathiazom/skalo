@@ -18,7 +18,7 @@ class FloatPicker(context: Context?, attrs: AttributeSet?) : NumberPicker(contex
     init {
         this.processAttributeSet(context, attrs)
         // Raw input type to obtain string input while still displaying appropriate keyboard
-        InputUtils.extractEditText(this)!!.setRawInputType(InputType.TYPE_CLASS_NUMBER)
+        InputUtils.extractEditText(this)?.setRawInputType(InputType.TYPE_CLASS_NUMBER)
     }
 
     private fun processAttributeSet(context: Context?, attrs: AttributeSet?) {
