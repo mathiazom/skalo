@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/black"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".RecordFragment">
+    tools:context=".EditRecordFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <!-- TODO Display actual day -->
         <TextView
             android:id="@+id/scale_week_day"
             android:layout_width="wrap_content"
@@ -23,26 +24,28 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
+        <!-- TODO Display actual date -->
         <TextView
             android:id="@+id/scale_date"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="2021-03-14"
+            android:text="@string/edit_record_date_placeholder"
             android:textColor="@color/material_on_primary_emphasis_medium"
             android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/scale_week_day" />
 
-
-        <TextView
-            android:id="@+id/editText"
+        <com.mzom.skalo.FloatPicker
+            android:id="@+id/scale_edit_weight"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="63.7"
+            android:scaleX="2"
+            android:scaleY="2"
+            app:min_float="0.0"
+            app:max_float="500.0"
+            android:imeOptions="actionDone"
             android:textColor="@color/white"
-            android:textColorHint="@color/cardview_dark_background"
-            android:textSize="72sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -50,18 +53,17 @@
 
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/record_edit_button"
+            android:id="@+id/scale_record_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="84dp"
             android:contentDescription="@string/record_weight_button"
-            android:src="@drawable/ic_baseline_edit_24"
+            android:src="@drawable/ic_baseline_done_24"
             app:fabCustomSize="64dp"
-            android:backgroundTint="@color/design_default_color_on_primary"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:maxImageSize="32dp" />
+            app:maxImageSize="42dp" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
